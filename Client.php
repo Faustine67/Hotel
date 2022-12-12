@@ -13,6 +13,6 @@ class Client
 
 	public function GetInfoClient()
 	{
-		return $this->_name . " " . $this->_firstname;
+		return $this->_firstname . " " . $this->_name;
 	}
 }
