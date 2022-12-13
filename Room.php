@@ -16,7 +16,7 @@ class Room
 		$this->_price = $price;
 		$this->_bedNumber = $bedNumber;
 		$this->_hasWifi = $hasWifi;
-		$this->_status = "Libre";
+		$this->_status = "available";
 		$this->_hotel = $hotel;
 		$this->_hotel->addRoom($this);
 		$this->_listReservation = [];
@@ -29,6 +29,7 @@ class Room
 
 	public function addReservation($reservation)
 	{
+		$this->_status = 'reserved';
 		$this->_listReservation[] = $reservation;
 	}
 

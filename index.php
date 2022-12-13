@@ -24,30 +24,42 @@ $client2= new Client ("Virgile", "GIBELLO");
 $reservation1= new Reservation($hotel1, $room1,"date");
 
 echo "<strong>".$hotel1-> getInfoHotel()."</strong>";
+echo "Nombre de chambre"."<br>";
+echo "Nombre de chambre réservées"."<br>";
+echo "Nombre de chambre dispo"."<br>";
+
 echo "<strong>".$hotel2-> getInfoHotel()."</strong>";
 
-    $result= count($room);
-echo "Nombre de chambres :".$result."<br>";
-echo "Nombre de chambres réservées:"."<br>";
-echo "Nombre de chambres dispo:" ."<br>";
+echo "<strong>"."Reservation de ".$hotel1-> getInfoHotel()."</strong>";
 
-echo $hotel1->countRooms();
+
+
+//displayReservation();
+
+// $hotel1->displayReservation();
+// $hotel1->displayRoomsAvailability();
+
+// $client1->displayReservation();
+
+
+
 
 // echo "<strong>"."Reservation de l'hotel Hilton"."</strong>"."<br>";
-//     echo $room[1] ->getInfoRoom()."<br>";
-//     echo $room[2] ->getInfoRoom()."<br>";
-//     echo $room[3] ->getInfoRoom()."<br>";
-//     echo $room[4] ->getInfoRoom()."<br>";
-//     echo $room[5] ->getInfoRoom()."<br>";
+//     echo $room1 ->getInfoRoom()."<br>";
+//     echo $room2 ->getInfoRoom()."<br>";
+//     echo $room3 ->getInfoRoom()."<br>";
+//     echo $room4 ->getInfoRoom()."<br>";
+//     echo $room5->getInfoRoom()."<br>";
 
 // echo "<strong>"."Reservation de l'hotel Regent"."</strong>"."<br>";
-//     echo $room[6] ->getInfoRoom()."<br>";
-//     echo $room[7] ->getInfoRoom()."<br>";
-//     echo $room[8] ->getInfoRoom()."<br>";
-//     echo $room[9] ->getInfoRoom()."<br>";
+//     echo $room6 ->getInfoRoom()."<br>";
+//     echo $room7 ->getInfoRoom()."<br>";
+//     echo $room8 ->getInfoRoom()."<br>";
+//     echo $room9 ->getInfoRoom()."<br>";
 
 echo "<strong>"."Reservation de". $client1 ->getInfoClient()."</strong>"."<br>";
 
 echo "<strong>"."Reservation de". $client2 ->getInfoClient()."</strong>"."<br>";
 
-echo $reservation1->getInfoReservation();
+echo $reservation1->getInfoReservation()."<br>";
+echo "<strong>"."Statuts des chambres de". $hotel1."</strong>";
