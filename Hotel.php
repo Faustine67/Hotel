@@ -4,18 +4,28 @@ class Hotel {
 
 private $_name;
 private $_adress;
-private $_room;
+private array $_listRoom;
 
 public function __construct ($name,$adress)
 {
 	$this->_name = $name;
 	$this->_adress= $adress;
-	$this->_room= $room;
-	$this->_room-> addHotel($this);
-
+	$this->_listRoom = [];
 }
+public function addRoom($room){
+	$this->_listRoom[]= $room;
+}
+
+function displayRoom(){
+	$result="";
+	foreach ($this->_listRoom as $room){
+	$result.= $room;
+	}
+	return $result;
+}
+
 public function getInfoHotel() {
-return $this->_name ." ".$this->_adress. " ".$this->_room. "<br>";
+return $this->_name ." ".$this->_adress. " "."<br>";
 }
 
 public function __toString()
