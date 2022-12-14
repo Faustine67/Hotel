@@ -25,3 +25,5 @@ class Reservation
 		return $this->getInfoReservation();
 	}
 }
+// date time + date diff
+// Ajouter date arrivée et date de sortie

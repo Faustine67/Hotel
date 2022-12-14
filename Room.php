@@ -21,7 +21,10 @@ class Room
 		$this->_hotel->addRoom($this);
 		$this->_listReservation = [];
 	}
-
+	public function GetRoom()
+	{
+		return $this->_room;
+	}
 	public function getInfoRoom()
 	{
 		return $this->_room . " " . $this->_price . " " . $this->_bedNumber . " " . $this->_hasWifi ;

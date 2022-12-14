@@ -28,9 +28,9 @@ class Hotel
 		}
 		return $result;
 	}
-	public function addReservation($room)
+	public function addReservation($reservation)
 	{
-		$this->_listRoom[] = $room;
+		$this->_listReservation[] = $reservation;
 	}
 	public function displayReservation()
 	{
@@ -40,31 +40,40 @@ class Hotel
 		}
 		return $result;
 	}
+
+	public function getName()
+	{
+		return $this->_name;
+	}
 	public function getInfoHotel()
 	{
-		return $this->_name . " " . $this->_adress . " " . "<br>";
+		return $this->_name . "<br> " . $this->_adress . " " . "<br>";
 	}
-
-	public function countAvailableRooms()
-	{
-		$result = 0;
-		foreach ($this->_listRoom as $room) {
-			if ($room->get_status() == 'available') {
-				$result++;
-			}
-		}
-		return $result;
-	}
-
+	
 	public function countRooms()
 	{
 		return count($this->_listRoom);
 	}
+	public function countReservation()
+	 {
+		return count($this->_listReservation);
+	 }
+
+	// public function GetAvailable()
+	//  {
+	// 	$reserved = count($this->_listReservation);
+	// 	$room = count($this->_listRoom);
+	// 	$available = $room -$reserved;
+	// 	return $available;
+	//  }
+	public function GetAvailable()
+	{
+		return $this->countRooms()-$this->countReservation();
+	}
+
 
 	public function __toString()
 	{
 		return $this->getInfoHotel();
 	}
 }
-
-// foreach dispo qui parcours la liste des chambre-> ccreation compteur
