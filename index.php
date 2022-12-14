@@ -50,3 +50,36 @@ echo "<strong>"."Reservation de ". $client2 ->getInfoClient()."</strong>"."<br>"
     echo $hotel2->getName()." / ".$room8->getInfoRoom()."date"."<br>"."<br>";
 
 echo "<strong>"."Statuts des chambres de ". $hotel1->getName()."</strong>";
+
+$prix = [
+	"Chambre 1" => "200€",
+	"Chambre 2" => "150€",
+	"Chambre 6" => "150€",
+	"Chambre 7" => "200€",
+];
+
+echo afficherTableHTML($prix);
+
+function afficherTableHTML($prix){
+ksort($prix);
+	$result = "<table border=1>	
+				<thead>	
+					<tr>
+						<th> Chambre </th>
+						<th> Prix </th>
+						<th> Wifi </th>
+                        <th> Etat </th>
+					</tr>
+				</thead>
+			<tbody>";
+	foreach($prix as $room => $prix) {
+		$result .= "<tr>
+					<td>".ucfirst($room)."</td>
+					<td>".ucfirst($prix)."</td>
+                    <td>".ucfirst("Wifi")."</td>
+                    <td>".ucfirst("date")."</td>
+				</tr>";			
+	}
+	$result .= "</tbody></table>";
+	return $result;
+}
